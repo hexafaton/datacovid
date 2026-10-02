@@ -1,0 +1,56 @@
+================================================================================
+DOKUMENTASI SUMBER DATA - TUGAS VISUALISASI DATA
+================================================================================
+Tema Proyek: Dashboard Visualisasi Data Interaktif COVID-19 Indonesia
+Mata Kuliah: Visualisasi Data - Teknik Informatika Semester VII
+
+1. SUMBER DATA UTAMA (PRIMARY DATA SOURCE):
+--------------------------------------------------------------------------------
+- Sumber Utama: COVID-19 Indonesia Time Series (KawalCOVID19 / Kemenkes RI / Kaggle)
+- URL / Repositori: 
+  https://raw.githubusercontent.com/rhmdziz/visualiasi-data-covid-19-indonesia/main/covid_19_indonesia_time_series_all.csv
+- Lisensi: CC0 1.0 Universal (Public Domain Dedication)
+- Tanggal Akses: 2 Oktober 2026
+- Format: Comma-Separated Values (.csv)
+- Cakupan Wilayah: 34 Provinsi di Indonesia dan Tingkat Nasional
+- Periode Data: Maret 2020 s.d. September 2022 (Lebih dari 30.000 records)
+
+2. SUMBER DATA SEKUNDER (VAKSINASI & POPULASI):
+--------------------------------------------------------------------------------
+- Sumber: Dashboard Vaksinasi Kementerian Kesehatan RI (https://vaksin.kemkes.go.id/) 
+  & Our World in Data (OWID) COVID-19 Dataset Indonesia
+- Data yang Diambil: Cakupan vaksinasi dosis lengkap (Dosis 2) per provinsi, sasaran target vaksinasi, dan progres vaksinasi harian nasional.
+- Lisensi: Creative Commons BY 4.0 / Public Domain
+
+3. STRUKTUR ATRIBUT DATASET MENTAH (RAW DATA):
+--------------------------------------------------------------------------------
+- Date: Tanggal pencatatan (M/D/YYYY)
+- Location ISO Code: Kode ISO wilayah (contoh: ID-JK, ID-JB, ID-JT)
+- Location: Nama wilayah (Indonesia / Nama Provinsi)
+- New Cases: Kasus positif baru harian
+- New Deaths: Kematian baru harian
+- New Recovered: Pasien sembuh baru harian
+- New Active Cases: Perubahan kasus aktif harian
+- Total Cases: Akumulasi kasus positif
+- Total Deaths: Akumulasi kematian
+- Total Recovered: Akumulasi pasien sembuh
+- Total Active Cases: Akumulasi kasus aktif
+- Location Level: Tingkat lokasi ('Country' atau 'Province')
+- Province: Nama provinsi
+- Island: Pulau (Jawa, Sumatera, Kalimantan, Sulawesi, Bali, Nusa Tenggara, Maluku, Papua)
+- Time Zone: Zona waktu (WIB/WITA/WIT)
+- Area (km2): Luas wilayah dalam kilometer persegi
+- Population: Jumlah penduduk
+- Population Density: Kepadatan penduduk per km2
+- Longitude / Latitude: Koordinat geografis pusat provinsi
+- Case Fatality Rate: Tingkat mortalitas (kematian / total kasus)
+- Case Recovered Rate: Tingkat kesembuhan (sembuh / total kasus)
+- Growth Factor of New Cases: Faktor pertumbuhan kasus harian
+
+4. CATATAN KONDISI DATA AWAL SEBELUM PEMBERSIHAN:
+--------------------------------------------------------------------------------
+- Format tanggal masih bertipe string objek campuran (M/D/YYYY).
+- Terdapat kolom dengan nilai null/missing (misalnya kolom kabupaten/kota jika baris adalah tingkat provinsi).
+- Terdapat baris agregat 'Indonesia' yang tercampur dengan data 34 provinsi (harus dipisahkan agar agregasi provinsi tidak double-counting).
+- Format persentase (seperti CFR dan Recovered Rate) menggunakan format teks dengan simbol '%' (misal '2.34%') yang perlu dikonversi ke numerik desimal/float.
+================================================================================
